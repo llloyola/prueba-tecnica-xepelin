@@ -1,12 +1,19 @@
 const express = require("express");
 const db = require("./models");
+const path = require("path");
 
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, "../build")));
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build", "index.html"));
+});
+
 app.use(function (req, res, next) {
 
-  var allowedDomains = ["http://localhost:3000", 'https://hooks.zapier.com'];
+  var allowedDomains = ["https://prueba-tecnica-llloyola.herokuapp.com", 'https://hooks.zapier.com'];
   var origin = req.headers.origin;
   if(allowedDomains.indexOf(origin) > -1){
     res.setHeader('Access-Control-Allow-Origin', origin);

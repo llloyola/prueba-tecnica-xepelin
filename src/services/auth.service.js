@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const API_URL = "http://localhost:5000/api/auth/";
+const API_URL = "https://prueba-tecnica-llloyola.herokuapp.com/api/auth/";
 
 const register = (name, email, password) => {
   return axios.post(API_URL + "signup", {
