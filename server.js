@@ -5,11 +5,7 @@ const path = require("path");
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "../build")));
-
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build", "index.html"));
-});
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 app.use(function (req, res, next) {
 
@@ -33,6 +29,10 @@ app.use(express.json());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 // simple route
 app.get("/", (req, res) => {
