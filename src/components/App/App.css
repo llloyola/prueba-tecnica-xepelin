@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+
+.App input {
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin: 5px;
+  margin-bottom: 0px;
+  padding: 5px 10px;
+  width: 250px;
+  height: 30px;
+}
+
+.App button {
+  height: 30px;
+  min-width: 150px;
+  border-radius: 10px;
+  border: none;
+  background-color: #04AA6D;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+  color: white;
+}
+
+.App button:hover {
+  background-color: #107650;
+}
+
+.App .error {
+  color: tomato;
+  margin-bottom: 10px;
+  height: 8px;
+  font-size: 13px;
+}
