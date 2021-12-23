@@ -92,7 +92,7 @@ function Table() {
  
     return (
 		<>
-			{logoutReady || !currentUser['accessToken'] ? <Navigate to="/"/> : (
+			{logoutReady || !currentUser ? <Navigate to="/"/> : (
 				<>
 					<div className='navbar'>
 						<h2>{currentUser ? `Hi, ${currentUser.name}!` : ''}</h2>
