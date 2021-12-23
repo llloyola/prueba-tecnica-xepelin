@@ -37,7 +37,7 @@ const loadInitialState = async () => {
 }
 
 function Table() {
-    let data = useAsync(loadInitialState, []);
+    const data = useAsync(loadInitialState, []);
 	const [errorsIndices, setErrorsIndices] = useState([]);
 	const [logoutReady, setLogoutReady] = useState(false);
 	const [previousData, setPreviousData] = useState([]);
@@ -92,7 +92,7 @@ function Table() {
  
     return (
 		<>
-			{logoutReady ? <Navigate to="/"/> : (
+			{logoutReady || !currentUser['accessToken'] ? <Navigate to="/"/> : (
 				<>
 					<div className='navbar'>
 						<h2>{currentUser ? `Hi, ${currentUser.name}!` : ''}</h2>
