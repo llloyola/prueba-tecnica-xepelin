@@ -34,6 +34,8 @@ app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
+console.log(__dirname);
+
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to Luis' application." });
